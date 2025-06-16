@@ -1,3 +1,10 @@
+
+import streamlit as st
+import cv2
+import numpy as np
+from PIL import Image
+import io
+
 hide_streamlit_cloud_elements = """
     <style>
     #MainMenu {visibility: hidden;}
@@ -12,11 +19,6 @@ st.markdown(hide_streamlit_cloud_elements, unsafe_allow_html=True)
 
 
 
-import streamlit as st
-import cv2
-import numpy as np
-from PIL import Image
-import io
 
 st.header("Image Resizer")
 uploaded_img=st.file_uploader("Upload/Drag your file here..",type=["jpg","jpeg","png"])
