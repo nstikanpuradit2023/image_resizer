@@ -1,3 +1,17 @@
+hide_streamlit_cloud_elements = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
+    .stDeployButton {display: none;}
+    a[title="View source"] {display: none !important;}
+    button[kind="icon"] {display: none !important;}
+    </style>
+"""
+st.markdown(hide_streamlit_cloud_elements, unsafe_allow_html=True)
+
+
+
 import streamlit as st
 import cv2
 import numpy as np
