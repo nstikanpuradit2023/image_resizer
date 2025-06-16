@@ -29,7 +29,7 @@ if uploaded_img:
         resized_img=cv2.resize(array_image,(int(width),int(height)))
         st.image(resized_img,caption="Resized",width=200)
 
-        buff=io.BytesIO()
-        image_pil=Image.fromarray(resized_img)
-        image_pil.save(buff,format="jpeg")
-        st.download_button("Download here",data=buff.getvalue(),mime="image/jpeg",file_name="resized_image_from_jayApp.jpeg")
+        with io.BytesIO() as buff:
+            image_pil=Image.fromarray(resized_img)
+            image_pil.save(buff,format="jpeg")
+            st.download_button("Download here",data=buff.getvalue(),mime="image/jpeg",file_name="resized_image_from_jayApp.jpeg")
